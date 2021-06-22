@@ -5,18 +5,22 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserComponent } from './user.component';
+import { FormsModule } from '@angular/forms';
+import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 
 
 @NgModule({
   declarations: [
     UserComponent,
     UserLoginComponent,
-    UserSignupComponent
+    UserSignupComponent,
+    UserDashboardComponent 
     
   ],
   imports: [
     UserRoutingModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class UserModule { }
