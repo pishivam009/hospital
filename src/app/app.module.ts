@@ -6,20 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AdminComponent } from './admin/admin.component';
-import { DoctorComponent } from './doctor/doctor.component';
 import { HomeComponent } from './home/home.component';
+import { DoctorModule } from './doctor/doctor.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AdminComponent,
-    DoctorComponent,
     HomeComponent
   ],
   imports: [
     BrowserModule,
     UserModule,
+    DoctorModule,
+    AdminModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule
