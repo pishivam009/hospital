@@ -1,10 +1,10 @@
-export class User {
-    id!:number;
+export class Doctor {
+    id!: number;
     name!: string;
     email!: string;
     password!: string;
     contact!: string;
     govtId!: string;
     address!: string;
-    bloodGroup!: string;
+    dept!: string;
 }

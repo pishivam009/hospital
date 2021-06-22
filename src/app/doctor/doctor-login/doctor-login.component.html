@@ -14,7 +14,7 @@
                     </div>
 
 
-                    <button class="btn btn-sm btn-success" [disabled]="!loginForm.valid">Login</button>&nbsp;
+                    <button class="btn btn-sm btn-success" [disabled]="!loginForm.valid" (click)="doDoctorLogin(loginForm.value)">Login</button>&nbsp;
                     <button type="reset" class="btn btn-sm btn-success">Reset</button>
                     <!--{{data | json }}-->
                 </fieldset>
