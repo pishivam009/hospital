@@ -1,4 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
+import { User } from 'src/app/user';
 
 @Component({
   selector: 'app-user-signup',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSignupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: ApiService, private router: Router, private http: HttpClient) { }
+  bgs=["A+","A-","B+","B-","AB+","AB-","O+","O-"];
 
+  bloodGroup!:string;
+
+  doUserSignup(userData: User){
+  this.apiService.userSignup(userData).subscribe(
+    data => {
+      alert(data);
+    }
+  );
+  }
+
+  setBloodGroup(bloodGroup:string){
+    this.bloodGroup = bloodGroup;
+  }
   ngOnInit(): void {
   }
+
+
+ 
 
 }

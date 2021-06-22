@@ -7,6 +7,7 @@ import { UserSignupComponent } from './user-signup/user-signup.component';
 import { UserComponent } from './user.component';
 import { FormsModule } from '@angular/forms';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { UserDashboardComponent } from './user-dashboard/user-dashboard.componen
   imports: [
     UserRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule
   ]
 })
 export class UserModule { }
