@@ -7,15 +7,16 @@
         </a>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a class="nav-link px-2 link-secondary" routerLink="/">Home</a></li>
 
-            <li><button type="button" class="btn btn-link">Dashboard</button></li>
+            <li><a class="nav-link px-2 link-secondary">Dashboard</a></li>
         </ul>
 
         <div class="col-md-3 text-end">
-            <button type="button" class="btn btn-primary" routerLink="user">User</button> &nbsp;
-            <button type="button" class="btn btn-primary" routerLink="doctor">Doctor</button> &nbsp;
-            <button type="button" class="btn btn-primary" routerLink="admin">Admin</button>
+            <button type="button" class="btn btn-primary" routerLink="user" *ngIf='rtr.url=="/"'>User</button> &nbsp;
+            <button type="button" class="btn btn-primary" routerLink="doctor" *ngIf='rtr.url=="/"'>Doctor</button> &nbsp;
+            <button type="button" class="btn btn-primary" routerLink="admin" *ngIf='rtr.url=="/"'>Admin</button>&nbsp;
+            <button type="button" class="btn btn-primary" *ngIf='rtr.url=="/user/dashboard" || rtr.url=="/admin/dashboard"|| rtr.url=="/doctor/dashboard"' (click)="doLogout()">Log Out</button>
         </div>
     </header>
 </div>

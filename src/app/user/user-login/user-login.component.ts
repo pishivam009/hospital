@@ -17,13 +17,13 @@ export class UserLoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  data: User = new User();
+  //data: User = new User();
  
   doUserLogin(formValue: LoginDetails) {
     this.apiService.userLogin(formValue).subscribe(
       (val: User) => {
-        this.data = val;
-        console.log(val);
+        //this.data = val;
+        //console.log(val);
 
         if (val.id > 0) {
 

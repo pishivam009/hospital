@@ -6,6 +6,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
   imports: [
     CommonModule,
     AdminRoutingModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule
   ]
 })
 export class AdminModule { }
