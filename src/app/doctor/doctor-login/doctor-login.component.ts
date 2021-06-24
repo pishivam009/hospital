@@ -37,9 +37,11 @@ export class DoctorLoginComponent implements OnInit {
           sessionStorage.setItem("doctorIsLoggedIn", 'true');
         
           alert("Login successful");
+          this.router.navigate(['../doctor/dashboard']);
     
         } else {
           alert("Invalid Credentials");
+          this.router.navigate(['../doctor']);
         }
     
       }

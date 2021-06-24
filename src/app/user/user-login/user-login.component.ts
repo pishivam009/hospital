@@ -37,9 +37,11 @@ export class UserLoginComponent implements OnInit {
           sessionStorage.setItem("userIsLoggedIn", 'true');
         
           alert("Login successful");
+          this.router.navigate(['../user/dashboard']);
     
         } else {
           alert("Invalid Credentials");
+          this.router.navigate(['../user']);
         }
     
       }

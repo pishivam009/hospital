@@ -33,9 +33,11 @@ export class AdminLoginComponent implements OnInit {
           sessionStorage.setItem("adminIsLoggedIn", 'true');
         
           alert("Login successful");
+          this.router.navigate(['../admin/dashboard']);
     
         } else {
           alert("Invalid Credentials");
+          this.router.navigate(['../admin']);
         }
     
       }
