@@ -31,5 +31,23 @@ export class ApiService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.post<any>(this.url+"/addUser", signupdetails, { headers, responseType: 'text' as 'json'  });
   }
+
+  userList():Observable<User[]>{
+    return this.http.get<User[]>(this.url+"/allPatients");
+  }
+
+  doctorList():Observable<Doctor[]>{
+    return this.http.get<Doctor[]>(this.url+"/allDoctors");
+  }
+
+  deleteUser(id:number):Observable<any>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.delete<any>(this.url+"/deletePatient/"+id,{ headers, responseType: 'text' as 'json'  });
+  }
+
+  deleteDoctor(id:number):Observable<any>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.delete<any>(this.url+"/deleteDoctor/"+id,{ headers, responseType: 'text' as 'json'  });
+  }
     
 }

@@ -7,13 +7,19 @@ import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './admin.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { DoctorSignupComponent } from './doctor-signup/doctor-signup.component';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 
 @NgModule({
   declarations: [
     AdminComponent,
     AdminLoginComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    DoctorSignupComponent,
+    DoctorListComponent,
+    UserListComponent
 
   ],
   imports: [

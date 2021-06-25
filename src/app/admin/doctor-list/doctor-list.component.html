@@ -1,0 +1,32 @@
+&nbsp;&nbsp;<button class="btn btn-primary" (click)="getDoctorList()">Refresh</button> &nbsp;
+<ng-container>Last updated: {{refreshedOn|date:"dd-MM-YYYY HH:mm:ss"}}</ng-container>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Govt ID</th>
+            <th scope="col">Dept.</th>
+            <th scope="col">Update</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let doctor of list; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>DOCTOR-{{ doctor.id }}</td>
+            <td>{{ doctor.name }}</td>
+            <td>{{ doctor.email }}</td>
+            <td>{{ doctor.address }}</td>
+            <td>{{ doctor.contact }}</td>
+            <td>{{ doctor.govtId }}</td>
+            <td>{{ doctor.dept }}</td>
+            <td><button class="btn btn-primary">Update</button></td>
+            <td><button class="btn btn-danger" (click)="doDeleteDoctor(doctor.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
