@@ -10,50 +10,50 @@ import { Doctor } from 'src/app/doctor';
 })
 export class RequestAppointmentComponent implements OnInit {
 
-  constructor( private apiService: ApiService) { }
+  constructor(private apiService: ApiService) { }
   counter(i: number) {
     return new Array(i);
-}
-  ds : Doctor[] =[];
+  }
+  ds: Doctor[] = [];
 
- 
+
 
   ngOnInit(): void {
     this.getDoctorList();
   }
-  doctorId!:number;
-  slotNo!:number;
-  maxSlots!:number;
-  date!:string;
-  problem!:string;
-  availability!:string;
+  doctorId!: number;
+  slotNo!: number;
+  maxSlots!: number;
+  date!: string;
+  problem!: string;
+  availability!: string;
 
-  a:any;
+  a: any;
 
-  setDoctorId(id:number){
+  setDoctorId(id: number) {
     this.doctorId = id;
     this.getMaxSlots(id);
     //console.log(this.doctorId);
   }
 
-  getDoctorList(){
-    this.apiService.doctorList().subscribe((data) => {this.ds=data;});
+  getDoctorList() {
+    this.apiService.doctorList().subscribe((data) => { this.ds = data; });
   }
 
-  getMaxSlots(doctorId: number){
-    this.apiService.maxSlot(doctorId).subscribe((data) =>{this.maxSlots=data;});
+  getMaxSlots(doctorId: number) {
+    this.apiService.maxSlot(doctorId).subscribe((data) => { this.maxSlots = data; });
   }
 
-  setSlotNo(i: number){
-    this.slotNo=i;
+  setSlotNo(i: number) {
+    this.slotNo = i;
   }
 
-  doCheckAvailability(){
+  doCheckAvailability() {
     console.log(this.date);
-    this.apiService.checkAvailability(this.date,this.doctorId, this.slotNo).subscribe((data) =>this.availability=data);
+    this.apiService.checkAvailability(this.date, this.doctorId, this.slotNo).subscribe((data) => this.availability = data);
   }
 
-  doMakeAppointment(val : any){
+  doMakeAppointment(val: any) {
     this.a = {
       date: val.date,
       patientId: Number(sessionStorage.getItem('userId')),
@@ -65,9 +65,6 @@ export class RequestAppointmentComponent implements OnInit {
     };
     console.log(this.a);
     this.apiService.makeAppointment(this.a).subscribe((data) => alert(data));
-
-    
-
   }
 
 }
