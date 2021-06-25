@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Admin } from './admin';
+import { Appointment } from './appointment';
 import { Doctor } from './doctor';
 import { LoginDetails } from './login-details';
 import { User } from './user';
@@ -63,6 +64,21 @@ export class ApiService {
   deleteDoctor(id:number):Observable<any>{
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.delete<any>(this.url+"/deleteDoctor/"+id,{ headers, responseType: 'text' as 'json'  });
+  }
+
+  maxSlot(id:number):Observable<number>{
+    return this.http.get<number>(this.url+"/maxSlot/"+id);
+  }
+
+  checkAvailability(date: string, doctorId: number, slotNo: number):Observable<any>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.get<any>(this.url+"/checkAvailability/"+date+"/"+doctorId.toString()+"/"+slotNo.toString(),{ headers, responseType: 'text' as 'json'  });
+  }
+
+  makeAppointment(app:Appointment):Observable<any>{
+    
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post<any>(this.url+"/addAppointment", app,{ headers, responseType: 'text' as 'json'  })
   }
     
 }

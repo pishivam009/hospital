@@ -34,6 +34,7 @@ export class UserLoginComponent implements OnInit {
           sessionStorage.setItem("userGovtId", val.govtId);
           sessionStorage.setItem("userAddress", val.address);
           sessionStorage.setItem("userBloodGroup", val.bloodGroup);
+          sessionStorage.setItem("userAge", val.age.toString());
           sessionStorage.setItem("userIsLoggedIn", 'true');
         
           alert("Login successful");

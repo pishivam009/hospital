@@ -10,8 +10,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { DoctorSignupComponent } from './doctor-signup/doctor-signup.component';
 import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { UserListComponent } from './user-list/user-list.component';
-import { AdminUpdateComponent } from './admin-update/admin-update.component';
-import { DoctorModule } from '../doctor/doctor.module';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 
 
 @NgModule({
@@ -22,15 +21,14 @@ import { DoctorModule } from '../doctor/doctor.module';
     DoctorSignupComponent,
     DoctorListComponent,
     UserListComponent,
-    AdminUpdateComponent
+    AppointmentListComponent
 
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     FormsModule,
-    MatTabsModule,
-    DoctorModule
+    MatTabsModule
   ]
 })
 export class AdminModule { }

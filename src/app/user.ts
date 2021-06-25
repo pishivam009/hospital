@@ -7,4 +7,5 @@ export class User {
     govtId!: string;
     bloodGroup!: string;
     password!: string;
+    age!: number;
 }

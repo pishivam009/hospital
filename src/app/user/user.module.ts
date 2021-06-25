@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import {MatSelectModule} from '@angular/material/select';
 import { UserUpdateComponent } from './user-update/user-update.component';
+import { RequestAppointmentComponent } from './request-appointment/request-appointment.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -17,14 +20,17 @@ import { UserUpdateComponent } from './user-update/user-update.component';
     UserLoginComponent,
     UserSignupComponent,
     UserDashboardComponent,
-    UserUpdateComponent 
+    UserUpdateComponent,
+    RequestAppointmentComponent 
     
   ],
   imports: [
     UserRoutingModule,
     CommonModule,
     FormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule,
+    MatDatepickerModule
   ]
 })
 export class UserModule { }
