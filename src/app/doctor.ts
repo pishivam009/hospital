@@ -7,4 +7,5 @@ export class Doctor {
     govtId!: string;
     address!: string;
     dept!: string;
+    maxSlot!: number;
 }

@@ -15,6 +15,9 @@ export class UserSignupComponent implements OnInit {
   bgs=["A+","A-","B+","B-","AB+","AB-","O+","O-"];
 
   bloodGroup!:string;
+  setBloodGroup(bloodGroup:string){
+    this.bloodGroup = bloodGroup;
+  }
 
   doUserSignup(userData: User){
   this.apiService.userSignup(userData).subscribe(
@@ -24,9 +27,7 @@ export class UserSignupComponent implements OnInit {
   );
   }
 
-  setBloodGroup(bloodGroup:string){
-    this.bloodGroup = bloodGroup;
-  }
+  
   ngOnInit(): void {
   }
 

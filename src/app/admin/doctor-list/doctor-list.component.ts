@@ -14,11 +14,17 @@ export class DoctorListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  doctorSignup=false;
+  activateDoctorSignup(){
+    this.doctorSignup=true;
+  }
+
   list: Doctor[] = [];
   active: boolean = false;
   refreshedOn: string = "";
   getDoctorList() {
     this.active = true;
+    this.doctorSignup=false;
     this.refreshedOn = Date.now().toString();
     this.list=[];
     this.apiService.doctorList().subscribe(
