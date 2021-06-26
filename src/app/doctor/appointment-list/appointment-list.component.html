@@ -9,7 +9,6 @@
             <th scope="col">ID</th>
             <th scope="col">Date</th>
             <th scope="col">Patient ID</th>
-            <th scope="col">Doctor ID</th>
             <th scope="col">Slot No</th>
             <th scope="col">Status</th>
             <th scope="col">Prescription</th>
@@ -21,11 +20,31 @@
             <th scope="row">{{ i + 1 }}</th>
             <td>APP-{{ app.id }}</td>
             <td>{{ app.date }}</td>
-            <td>{{ app.patientId }}</td>
             <td>{{ app.doctorId }}</td>
             <td>{{ app.slotNo }}</td>
-            <td>{{ app.status }}</td>
-            <td>{{ app.prescription }}</td>
+            <td>
+
+                <div *ngIf="app.status == 0"> Waiting<br>
+                    <button type="button" class="btn btn-success" (click)="doConfirmAppointment(app.id)">Approve</button> &nbsp;
+                    <button type="button" class="btn btn-danger" (click)="doRejectAppointment(app.id)">Reject</button>
+
+                </div>
+                <div *ngIf="app.status == -1"> Rejected</div>
+                <div *ngIf="app.status == 1"> Accepted</div>
+
+            </td>
+            <td>
+                <div *ngIf="app.status == 1 && app.prescription == ''">
+
+                    <input name="prescription" type="text " class="form-control" placeholder="Add Prescription" required #pres><br>
+
+                    <button type="button" class="btn btn-success" (click)="doAddPrescription(app.id, pres.value)">Add</button>
+                </div>
+                <div *ngIf="app.status == 1 && app.prescription != ''"> {{ app.prescription }}</div>
+                <div *ngIf="app.status == 0">First Approve Appointment to Add Prescription</div>
+                <div *ngIf="app.status == -1">--</div>
+
+            </td>
             <td>{{ app.problem }}</td>
 
         </tr>

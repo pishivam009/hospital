@@ -92,5 +92,20 @@ export class ApiService {
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.post<any>(this.url+"/addAppointment", app,{ headers, responseType: 'text' as 'json'  })
   }
+
+  confirmAppointment(id:number):Observable<any>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post<any>(this.url+"/confirmAppointment/"+id,{ headers, responseType: 'text' as 'json'  })
+  }
+
+  rejectAppointment(id:number):Observable<any>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
+    return this.http.post<any>(this.url+"/rejectAppointment/"+id,{ headers, responseType: 'text' as 'json'  })
+  }
+
+  addPrescription(id:number, val:string):Observable<any>{
+     return this.http.get<any>(this.url+"/addPrescription/"+id+"/"+val);
+  }
+
     
 }

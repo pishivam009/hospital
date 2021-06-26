@@ -24,7 +24,13 @@
             <td>{{ app.patientId }}</td>
             <td>{{ app.doctorId }}</td>
             <td>{{ app.slotNo }}</td>
-            <td>{{ app.status }}</td>
+            <td>
+
+                <div *ngIf="app.status == 0"> Waiting</div>
+                <div *ngIf="app.status == -1"> Rejected</div>
+                <div *ngIf="app.status == 1"> Accepted</div>
+
+            </td>
             <td>{{ app.prescription }}</td>
             <td>{{ app.problem }}</td>
 
