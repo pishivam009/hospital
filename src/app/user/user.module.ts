@@ -12,6 +12,7 @@ import { UserUpdateComponent } from './user-update/user-update.component';
 import { RequestAppointmentComponent } from './request-appointment/request-appointment.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     UserSignupComponent,
     UserDashboardComponent,
     UserUpdateComponent,
-    RequestAppointmentComponent 
+    RequestAppointmentComponent,
+    AppointmentListComponent 
     
   ],
   imports: [

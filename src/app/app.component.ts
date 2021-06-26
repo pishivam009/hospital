@@ -9,13 +9,28 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'hospital';
 
-  constructor(private router: Router){}
+  constructor(private router: Router) { }
 
-  rtr=this.router;
+  rtr = this.router;
 
-  doLogout(){
+  doLogout() {
     sessionStorage.clear();
     alert('Logged out');
     this.router.navigate(['/']);
+  }
+
+  dashboard() {
+    if (sessionStorage.getItem('doctorIsLoggedIn') == 'true') {
+      this.router.navigate(['doctor/dashboard']);
+    } else if (sessionStorage.getItem('userIsLoggedIn') == 'true') {
+      this.router.navigate(['user/dashboard']);
+    } else if (sessionStorage.getItem('adminIsLoggedIn') == 'true') {
+      this.router.navigate(['admin/dashboard']);
+    }
+
+    else {
+      alert('Please Log In');
+      this.router.navigate(['']);
+    }
   }
 }

@@ -7,6 +7,8 @@ import { FormsModule } from '@angular/forms';
 import { DoctorComponent } from './doctor.component';
 import { DoctorLoginComponent } from './doctor-login/doctor-login.component';
 import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
+import { AppointmentListComponent } from './appointment-list/appointment-list.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -14,12 +16,14 @@ import { DoctorUpdateComponent } from './doctor-update/doctor-update.component';
     DoctorComponent,
     DoctorLoginComponent,
     DoctorDashboardComponent,
-    DoctorUpdateComponent
+    DoctorUpdateComponent,
+    AppointmentListComponent
   ],
   imports: [
     CommonModule,
     DoctorRoutingModule,
-    FormsModule
+    FormsModule,
+    MatTabsModule
   ]
 })
 export class DoctorModule { }

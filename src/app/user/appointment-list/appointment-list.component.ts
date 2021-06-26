@@ -1,6 +1,6 @@
-import { Appointment } from './../../appointment';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
+import { Appointment } from 'src/app/appointment';
 
 @Component({
   selector: 'app-appointment-list',
@@ -14,6 +14,8 @@ export class AppointmentListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  patientId= Number(sessionStorage.getItem('userId'));
+
   list: Appointment[] = [];
   active: boolean = false;
   refreshedOn: string = "";
@@ -21,7 +23,8 @@ export class AppointmentListComponent implements OnInit {
     this.active = true;
     this.refreshedOn = Date.now().toString();
     this.list=[];
-    this.apiService.appointmentList().subscribe(
+    console.log(this.patientId);
+    this.apiService.appointmentListByPatientId(this.patientId).subscribe(
       (data) => { this.list = data; }
 
     );

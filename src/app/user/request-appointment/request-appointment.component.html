@@ -19,8 +19,8 @@
                 <mat-form-field appearance="fill">
                     <mat-label>Select Slot</mat-label>
                     <mat-select name="slotNo" ngModel required>
-                        <mat-option *ngFor="let in of counter(maxSlots); let i = index" [value]="i" (click)="setSlotNo(i)">
-                            {{i}}
+                        <mat-option *ngFor="let in of counter(maxSlots); let i = index" [value]="i" (click)="setSlotNo(i+1)">
+                            {{i+1}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>

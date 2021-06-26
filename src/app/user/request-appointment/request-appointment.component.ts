@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
-import { Appointment } from 'src/app/appointment';
 import { Doctor } from 'src/app/doctor';
 
 @Component({
@@ -15,8 +14,6 @@ export class RequestAppointmentComponent implements OnInit {
     return new Array(i);
   }
   ds: Doctor[] = [];
-
-
 
   ngOnInit(): void {
     this.getDoctorList();

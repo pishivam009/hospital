@@ -19,7 +19,7 @@ export class AdminLoginComponent implements OnInit {
 
   data: Admin = new Admin();
   doAdminLogin(formValue: LoginDetails) {
-    this.apiService.doctorLogin(formValue).subscribe(
+    this.apiService.adminLogin(formValue).subscribe(
       (val: Admin) => {
         this.data = val;
         console.log(val);

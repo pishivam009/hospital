@@ -56,6 +56,18 @@ export class ApiService {
     return this.http.get<Doctor[]>(this.url+"/allDoctors");
   }
 
+  appointmentList():Observable<Appointment[]>{
+    return this.http.get<Appointment[]>(this.url+"/allAppointments");
+  }
+
+  appointmentListByPatientId(id:number):Observable<Appointment[]>{
+    return this.http.get<Appointment[]>(this.url+"/appointmentsByPID/"+id);
+  }
+
+  appointmentListByDoctorId(id:number):Observable<Appointment[]>{
+    return this.http.get<Appointment[]>(this.url+"/appointmentsByDID/"+id);
+  }
+
   deleteUser(id:number):Observable<any>{
     const headers = new HttpHeaders().set('Content-Type', 'application/json; charset=utf-8');
     return this.http.delete<any>(this.url+"/deletePatient/"+id,{ headers, responseType: 'text' as 'json'  });
